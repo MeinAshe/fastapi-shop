@@ -49,9 +49,9 @@ class CartService:
     if not cart_data:
       return CartResponse(items=[], total=0.0, items_count=0)
     
-    product_ids = list(cart_data_keys())
+    product_ids = list(cart_data.keys())
     products = self.product_repository.get_multiple_by_ids(product_ids)
-    products_dict = {product_id: product for product in products}
+    products_dict = {product.id: product for product in products}
 
     cart_items = []
     total_price = 0.0
