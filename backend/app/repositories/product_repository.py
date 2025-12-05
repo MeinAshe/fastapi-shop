@@ -1,4 +1,4 @@
-from sqlalchemy import Session, joinedload
+from sqlalchemy.orm import Session, joinedload
 from typing import List, Optional
 from ..models.product import Product
 from ..schemas.product import ProductCreate
